@@ -642,7 +642,47 @@
     .flag-item span { display: none; } /* Esconde o texto no mobile para não poluir */
     .flag-item { padding: 6px; }
   }
-  
+  @media (max-width: 680px) {
+    #hero { 
+      grid-template-columns: 1fr; 
+      min-height: auto; 
+      padding-top: 80px; /* Garante espaço para a navbar fixa */
+    }
+
+    .hero-image { 
+      height: 45svh; /* Reduzi um pouco para caber melhor na tela */
+      order: -1; 
+      padding-top: 20px; 
+      margin-top: 0 !important; /* ZERA a margem negativa que estava cortando a logo */
+      justify-content: center; 
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-image img { 
+      height: auto; 
+      max-height: 100%; 
+      max-width: 75%; /* Garante que a logo não fique gigante no celular */
+      object-fit: contain;
+    }
+
+    /* Ajuste das bandeirinhas no celular */
+    .hero-flags-column {
+      left: 50% !important;
+      top: 0 !important; /* Coloca elas no topo da área da imagem */
+      transform: translateX(-50%) translateY(-20px) !important;
+      flex-direction: row !important; /* Deixa em linha */
+      width: 100%;
+      justify-content: center;
+      gap: 8px;
+    }
+    .flag-item span { display: none; } /* Esconde o texto para não amontoar */
+
+    .hero-text { padding: 30px 24px 50px; text-align: center; }
+    .hero-title { font-size: 2.2rem; }
+    .hero-desc { margin: 0 auto 30px; }
+    .scroll-hint { display: none; }
+  }
 </style>
 </head>
 <body>
