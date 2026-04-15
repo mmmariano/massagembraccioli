@@ -156,15 +156,19 @@
   .hero-cta:hover::after { transform: scaleX(1); }
   .hero-cta:hover { background: var(--blue); transform: translateY(-2px); }
   .hero-cta svg { flex-shrink: 0; }
-
-  /* ── HERO IMAGE (consolidated) ── */
-  .hero-image {
-    position: relative; z-index: 2;
+.hero-image {
+    position: relative; 
+    z-index: 2;
     display: flex;
-    align-items: flex-end;
+    /* ALTERAÇÃO AQUI: de flex-end para center ou flex-start */
+    align-items: center; 
     justify-content: center;
+    
     height: 90svh;
-    padding: 0 2vw 0 0;
+    padding: 0;
+    /* OPCIONAL: Se quiser subir ainda mais, use um margin-top negativo */
+    margin-top: -100px; 
+    
     overflow: visible;
     animation: fadeUp .9s .2s ease both;
   }
@@ -173,8 +177,16 @@
     height: 88%;
     max-width: 100%;
     object-fit: contain;
-    /* drop-shadow respeita a transparência do PNG, sem caixa */
-    filter: drop-shadow(0 12px 28px rgba(0,0,0,0.10));
+    
+    /* Remove qualquer borda, fundo ou sombra quadrada que possa ter sobrado */
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+
+    /* Mantém apenas essa sombra leve que segue o desenho da logo */
+    /* Se quiser remover ATÉ ISSO, apague a linha abaixo */
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.05));
   }
   .hero-image-overlay {
     position: absolute; inset: 0;
@@ -562,7 +574,75 @@
   @keyframes pulsewa {
     0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,.4); }
     50%      { box-shadow: 0 4px 36px rgba(37,211,102,.7); }
+  }.hero-flags-column {
+    position: absolute;
+    left: -20px;
+    /* Ajuste o top se necessário (ex: 50% para ficar no meio exato da logo) */
+    top: 50%; 
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 5;
+    pointer-events: none;
   }
+
+  /* Estilo de cada item (Pílula) */
+  .flag-item {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    padding: 6px 14px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid rgba(201, 168, 76, 0.15);
+    /* Animação única para a coluna toda ou individual */
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+  }
+
+  /* Delay para cada bandeira aparecer uma após a outra */
+  .flag-item:nth-child(1) { animation-delay: 0.3s; }
+  .flag-item:nth-child(2) { animation-delay: 0.4s; }
+  .flag-item:nth-child(3) { animation-delay: 0.5s; }
+  .flag-item:nth-child(4) { animation-delay: 0.6s; }
+
+  /* Círculo da Bandeira */
+  .flag-item img {
+    width: 18px !important;
+    height: 18px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: none !important;
+  }
+
+  /* Texto da Bandeira */
+  .flag-item span {
+    font-size: 0.55rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--dark);
+  }
+
+  /* Ajuste Mobile (Alinha horizontalmente no celular para economizar espaço) */
+  @media (max-width: 680px) {
+    .hero-flags-column {
+      left: 50%;
+      top: 10%;
+      transform: translateX(-50%);
+      flex-direction: row; /* Vira linha no celular */
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      gap: 8px;
+    }
+    .flag-item span { display: none; } /* Esconde o texto no mobile para não poluir */
+    .flag-item { padding: 6px; }
+  }
+  
 </style>
 </head>
 <body>
@@ -601,11 +681,36 @@
       Agendar pelo WhatsApp
     </a>
   </div>
+<div class="hero-image">
+  <!-- Coluna de Bandeiras Alinhadas -->
+  <div class="hero-flags-column">
+    
+    <div class="flag-item">
+      <img src="https://flagcdn.com/w40/br.png" alt="Brasil">
+      <span>Brasil</span>
+    </div>
 
-  <div class="hero-image">
-    <img src="logotipo-valeria-braccioli-massagem.png" alt="Valéria Braccioli — Bien Être"/>
-    <div class="hero-image-overlay"></div>
+    <div class="flag-item">
+      <img src="https://flagcdn.com/w40/us.png" alt="EUA">
+      <span>EUA</span>
+    </div>
+
+    <div class="flag-item">
+      <img src="https://flagcdn.com/w40/fr.png" alt="França">
+      <span>França</span>
+    </div>
+
+    <div class="flag-item">
+      <img src="https://flagcdn.com/w40/es.png" alt="Espanha">
+      <span>Espanha</span>
+    </div>
+
   </div>
+
+  <!-- Sua Logo -->
+  <img src="logotipo-valeria-braccioli-massagem.png" alt="Valéria Braccioli — Bien Être"/>
+  
+</div>
 
   <div class="scroll-hint">
     <div class="scroll-hint-line"></div>
