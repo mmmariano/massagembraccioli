@@ -52,7 +52,7 @@
     position: fixed; top: 0; width: 100%; z-index: 100;
     padding: 18px 28px;
     display: flex; align-items: center; justify-content: space-between;
-    background: rgba(247, 240, 220, 0.82);
+    background: rgba(247, 240, 245, 0.52);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(201, 168, 76, 0.25);
     transition: background .4s;
@@ -171,9 +171,9 @@
     filter: sepia(10%) brightness(.97);
   }
   .hero-image-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(to bottom, transparent 40%, rgba(247,240,220,.55) 100%);
-  }
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(252, 250, 245, 0.55) 100%);
+}
   /* floating badge */
   .hero-badge {
     position: absolute; bottom: 40px; left: -20px;
@@ -880,11 +880,11 @@
 
   // ── Nav background on scroll ──
   window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    nav.style.background = window.scrollY > 60
-      ? 'rgba(247,240,220,0.97)'
-      : 'rgba(247,240,220,0.82)';
-  });
+  const nav = document.querySelector('nav');
+  nav.style.background = window.scrollY > 60
+    ? 'rgba(252, 250, 245, 0.97)' /* Novo off-white mais opaco */
+    : 'rgba(252, 250, 245, 0.82)'; /* Novo off-white mais transparente */
+});
 
   // ── Stagger tecnica-items ──
   document.querySelectorAll('.tecnica-item').forEach((el, i) => {
