@@ -7,20 +7,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet"/>
 <style>
   :root {
-  --gold: #C9A84C;
-  --gold-light: #E8D08A;
-  --gold-pale: #F5EAC8;
-  /* CORES ALTERADAS ABAIXO */
-  --champagne: #FCFAF5;       /* Um off-white bem mais claro */
-  --champagne-dark: #F2EFE6;  /* Um tom de transição suave */
-  /* ---------------------- */
-  --black: #0D0D0D;
-  --dark: #1A1614;
-  --gray: #6B6560;
-  --blue: #2A4A6B;
-  --green: #2D5A3D;
-  --white: #FEFDFB;
-}
+    --gold: #C9A84C;
+    --gold-light: #E8D08A;
+    --gold-pale: #F5EAC8;
+    --champagne: #FCFAF5;
+    --champagne-dark: #F2EFE6;
+    --black: #0D0D0D;
+    --dark: #1A1614;
+    --gray: #6B6560;
+    --blue: #2A4A6B;
+    --green: #2D5A3D;
+    --white: #FEFDFB;
+  }
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   html { scroll-behavior: smooth; }
@@ -102,7 +101,6 @@
     position: absolute; inset: 0;
     background: linear-gradient(135deg, var(--champagne) 55%, var(--champagne-dark) 100%);
   }
-  /* decorative arc */
   .hero-arc {
     position: absolute; right: -5vw; top: -10vh;
     width: 60vw; height: 120vh;
@@ -159,36 +157,29 @@
   .hero-cta:hover { background: var(--blue); transform: translateY(-2px); }
   .hero-cta svg { flex-shrink: 0; }
 
+  /* ── HERO IMAGE (consolidated) ── */
   .hero-image {
     position: relative; z-index: 2;
-    display: flex; align-items: flex-end; justify-content: center;
-    height: 50svh; overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 90svh;
+    padding: 0 2vw 0 0;
+    overflow: visible;
     animation: fadeUp .9s .2s ease both;
   }
   .hero-image img {
-    width: 100%; height: 100%;
-    object-fit: cover; object-position: top center;
-    filter: sepia(10%) brightness(.97);
+    width: auto;
+    height: 88%;
+    max-width: 100%;
+    object-fit: contain;
+    /* drop-shadow respeita a transparência do PNG, sem caixa */
+    filter: drop-shadow(0 12px 28px rgba(0,0,0,0.10));
   }
   .hero-image-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to bottom, transparent 40%, rgba(252, 250, 245, 0.55) 100%);
-}
-  /* floating badge */
-  .hero-badge {
-    position: absolute; bottom: 40px; left: -20px;
-    background: var(--gold);
-    padding: 14px 22px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem; font-weight: 400;
-    color: var(--dark); letter-spacing: .05em;
-    box-shadow: 0 8px 32px rgba(0,0,0,.15);
-    animation: floatBadge 4s ease-in-out infinite;
-  }
-  .hero-badge small {
-    display: block; font-family: 'Raleway', sans-serif;
-    font-size: .58rem; letter-spacing: .2em; text-transform: uppercase;
-    color: rgba(13,13,13,.65); margin-top: 2px;
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(252,250,245,0.45) 100%);
+    pointer-events: none;
   }
 
   .scroll-hint {
@@ -206,9 +197,9 @@
 
   @media (max-width: 680px) {
     #hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-image { height: 55svh; order: -1; }
+    .hero-image { height: 52svh; order: -1; padding: 0; justify-content: center; }
+    .hero-image img { height: 100%; max-width: 80%; }
     .hero-text { padding: 40px 24px 50px; }
-    .hero-badge { left: 16px; bottom: 20px; }
     .scroll-hint { display: none; }
   }
 
@@ -407,7 +398,6 @@
     background: var(--white);
     padding: 40px 36px;
     border-left: 3px solid transparent;
-    transition: border-color .3s, background .3s, transform .3s;
     cursor: default;
     opacity: 0; transform: translateY(20px);
     transition: opacity .5s ease, transform .5s ease, border-color .3s, background .3s;
@@ -615,10 +605,6 @@
   <div class="hero-image">
     <img src="logotipo-valeria-braccioli-massagem.png" alt="Valéria Braccioli — Bien Être"/>
     <div class="hero-image-overlay"></div>
-    <div class="hero-badge">
-      Valéria Braccioli
-      <small>Terapeuta &amp; Esteticista</small>
-    </div>
   </div>
 
   <div class="scroll-hint">
@@ -732,7 +718,6 @@
         <div class="service-benefits">Performance · Recuperação · Prevenção</div>
       </div>
     </div>
-    
     <div class="service-card reveal">
       <img class="service-img" src="https://trywebdesign.com.br/valeria/massagem-gestantes.jpg" alt="Massagem para Gestantes"/>
       <div class="service-overlay">
@@ -742,8 +727,6 @@
         <div class="service-benefits">Relaxamento · Alívio de Dores · Detox</div>
       </div>
     </div>
-
-
     <div class="service-card reveal">
       <img class="service-img" src="https://trywebdesign.com.br/valeria/pedras-quentes.jpg" alt="Pedras Quentes"/>
       <div class="service-overlay">
@@ -753,7 +736,6 @@
         <div class="service-benefits">Relaxamento · Circulação · Anti-Stress</div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -880,11 +862,11 @@
 
   // ── Nav background on scroll ──
   window.addEventListener('scroll', () => {
-  const nav = document.querySelector('nav');
-  nav.style.background = window.scrollY > 60
-    ? 'rgba(252, 250, 245, 0.97)' /* Novo off-white mais opaco */
-    : 'rgba(252, 250, 245, 0.82)'; /* Novo off-white mais transparente */
-});
+    const nav = document.querySelector('nav');
+    nav.style.background = window.scrollY > 60
+      ? 'rgba(252, 250, 245, 0.97)'
+      : 'rgba(252, 250, 245, 0.82)';
+  });
 
   // ── Stagger tecnica-items ──
   document.querySelectorAll('.tecnica-item').forEach((el, i) => {
@@ -892,4 +874,4 @@
   });
 </script>
 </body>
-</html>
+</html> 
