@@ -337,37 +337,30 @@ padding: 110px 7vw;
 
   .service-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(13,13,13,.92) 0%, rgba(13,13,13,.15) 50%, transparent 100%);
+    background: linear-gradient(to top, rgba(13,13,13,.95) 0%, rgba(13,13,13,.35) 55%, transparent 100%);
     display: flex; flex-direction: column; justify-content: flex-end;
     padding: 24px 20px;
   }
   .service-gold-line {
     width: 28px; height: 1px; background: var(--gold);
     margin-bottom: 10px;
-    transform: scaleX(0); transform-origin: left;
-    transition: transform .4s .1s ease;
+    transform: scaleX(1);
   }
-  .service-card:hover .service-gold-line { transform: scaleX(1); }
   .service-name {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.2rem; font-weight: 400;
     color: var(--champagne); letter-spacing: .03em;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
+  /* ── DESCRIPTIONS ALWAYS VISIBLE ── */
   .service-desc {
     font-size: .72rem; font-weight: 300; line-height: 1.7;
-    color: rgba(247,240,220,.65); letter-spacing: .02em;
-    max-height: 0; overflow: hidden;
-    transition: max-height .5s ease;
+    color: rgba(247,240,220,.82); letter-spacing: .02em;
   }
-  .service-card:hover .service-desc { max-height: 120px; }
   .service-benefits {
     margin-top: 8px; font-size: .68rem;
     color: var(--gold-light); font-weight: 300;
-    opacity: 0; transform: translateY(6px);
-    transition: opacity .4s .15s, transform .4s .15s;
   }
-  .service-card:hover .service-benefits { opacity: 1; transform: none; }
 
   @media (max-width: 900px) {
     .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -375,8 +368,6 @@ padding: 110px 7vw;
   @media (max-width: 500px) {
     .services-grid { grid-template-columns: 1fr; gap: 3px; }
     .service-card { aspect-ratio: 4/3; }
-    .service-desc { max-height: 80px !important; }
-    .service-benefits { opacity: 1 !important; transform: none !important; }
   }
 
   /* ══════════════════════════════
@@ -951,97 +942,112 @@ padding: 110px 7vw;
     <h2 class="section-title">Técnicas que <em>renovam</em></h2>
   </div>
   <div class="services-grid">
+
+    <!-- MASSAGEM SUECA -->
     <div class="service-card reveal"
          data-name="Massagem Sueca"
-         data-desc="Técnica de massagem corporal que visa relaxar os músculos em profundidade, através de movimentos fluídos e firmes. Utilizada para redução de tensão muscular, melhora da circulação sanguínea e linfática e preparação para atividades físicas."
-         data-benefits="Relaxamento · Circulação · Mobilidade"
+         data-desc="Técnica de massagem corporal que visa relaxar os músculos em profundidade, executada por movimentos fluídos e firmes. Utilizada para redução de tensão muscular e stress, melhora da circulação sanguínea e linfática, flexibilidade e mobilidade articular e preparação ou recuperação de atividades físicas intensas. Uma técnica completa que oferece benefícios para a saúde física, mental e emocional."
+         data-benefits="Tensão & Stress · Circulação · Flexibilidade · Pré & Pós-treino"
          data-img="https://trywebdesign.com.br/valeria/massagem-sueca.jpg">
       <img class="service-img" src="https://trywebdesign.com.br/valeria/massagem-sueca.jpg" alt="Massagem Sueca"/>
       <div class="service-overlay">
         <div class="service-gold-line"></div>
         <div class="service-name">Massagem Sueca</div>
-        <div class="service-desc">Técnica de massagem corporal que visa relaxar os músculos em profundidade, através de movimentos fluídos e firmes.</div>
-        <div class="service-benefits">Relaxamento · Circulação · Mobilidade</div>
+        <div class="service-desc">Técnica de massagem corporal que relaxa os músculos em profundidade por movimentos fluídos e firmes. Reduz tensão muscular e stress, melhora circulação, flexibilidade e mobilidade articular.</div>
+        <div class="service-benefits">Tensão & Stress · Circulação · Pré & Pós-treino</div>
       </div>
     </div>
+
+    <!-- MASSAGEM CALIFORNIANA -->
     <div class="service-card reveal"
          data-name="Massagem Californiana"
-         data-desc="Chamada de 'toque da alma', seus movimentos suaves e harmoniosos percorrem todo o corpo acalmando e acolhendo. Esta técnica profundamente relaxante age no sistema nervoso, promovendo equilíbrio emocional e bem-estar duradouro."
-         data-benefits="Relaxamento Profundo · Equilíbrio · Alma"
+         data-desc="A massagem californiana é uma técnica relaxante que se distingue por seus movimentos suaves e harmoniosos que percorrem todo o corpo. Também chamada de 'toque da alma', justamente pela capacidade de acalmar e acalentar o corpo e a alma. Age profundamente no sistema nervoso, promovendo equilíbrio emocional e bem-estar duradouro."
+         data-benefits="Relaxamento Profundo · Equilíbrio · Bem-Estar · Alma"
          data-img="https://trywebdesign.com.br/valeria/massagem-californiana.jpg">
       <img class="service-img" src="https://trywebdesign.com.br/valeria/massagem-californiana.jpg" alt="Massagem Californiana"/>
       <div class="service-overlay">
         <div class="service-gold-line"></div>
         <div class="service-name">Massagem Californiana</div>
-        <div class="service-desc">Chamada de "toque da alma", seus movimentos suaves e harmoniosos percorrem todo o corpo acalmando e acolhendo.</div>
+        <div class="service-desc">Chamada de "toque da alma", seus movimentos suaves e harmoniosos percorrem todo o corpo, acalmando e acalentando. Age profundamente no sistema nervoso promovendo equilíbrio emocional.</div>
         <div class="service-benefits">Relaxamento Profundo · Equilíbrio · Alma</div>
       </div>
     </div>
+
+    <!-- DRENAGEM LINFÁTICA -->
     <div class="service-card reveal"
          data-name="Drenagem Linfática"
-         data-desc="Estimula a circulação da linfa, eliminando toxinas e reforçando o sistema imunológico. Reduz medidas e celulite. Indicada tanto para fins terapêuticos como linfodema, quanto para fins estéticos como modelagem corporal."
-         data-benefits="Detox · Redução de Medidas · Imunidade"
+         data-desc="Técnica que estimula a circulação da linfa, um fluído essencial ao sistema imunitário. Permite a eliminação de toxinas e reforça o sistema imunitário. Indicada tanto para fins medicinais, como tratamento do linfodema, quanto para fins estéticos como redução de medidas, celulite, pernas pesadas e retenção de líquidos."
+         data-benefits="Detox · Redução de Medidas · Imunidade · Retenção de Líquidos"
          data-img="https://trywebdesign.com.br/valeria/drenagem-linfatica.jpg">
       <img class="service-img" src="https://trywebdesign.com.br/valeria/drenagem-linfatica.jpg" alt="Drenagem Linfática"/>
       <div class="service-overlay">
         <div class="service-gold-line"></div>
         <div class="service-name">Drenagem Linfática</div>
-        <div class="service-desc">Estimula a circulação da linfa, eliminando toxinas e reforçando o sistema imunológico. Reduz medidas e celulite.</div>
-        <div class="service-benefits">Detox · Redução de Medidas · Imunidade</div>
+        <div class="service-desc">Estimula a circulação da linfa, eliminando toxinas e reforçando o sistema imunitário. Indicada para fins medicinais (linfodema) e estéticos (celulite, retenção de líquidos, redução de medidas).</div>
+        <div class="service-benefits">Detox · Celulite · Imunidade · Retenção</div>
       </div>
     </div>
+
+    <!-- MASSAGEM DESPORTIVA -->
     <div class="service-card reveal"
          data-name="Massagem Desportiva"
-         data-desc="Técnica terapêutica com movimentos firmes para preparar músculos e acelerar a recuperação. Combina liberação miofascial e alongamentos. Ideal para todas as modalidades esportivas, tanto em preparação quanto em recuperação pós-treino."
-         data-benefits="Performance · Recuperação · Prevenção"
+         data-desc="Técnica terapêutica direcionada que utiliza movimentos firmes para preparar os músculos, liberação miofascial e alongamentos. Utilizada em pré e pós-treino, para todas as atividades físicas e esportes. Melhora o desempenho, acelera a recuperação, reduz dor, fadiga e espasmos, ajuda a prevenir lesões e promove alívio geral e relaxamento."
+         data-benefits="Performance · Recuperação · Prevenção de Lesões · Fadiga"
          data-img="https://trywebdesign.com.br/valeria/massagem-desportiva.jpg">
       <img class="service-img" src="https://trywebdesign.com.br/valeria/massagem-desportiva.jpg" alt="Massagem Desportiva"/>
       <div class="service-overlay">
         <div class="service-gold-line"></div>
         <div class="service-name">Massagem Desportiva</div>
-        <div class="service-desc">Técnica terapêutica com movimentos firmes para preparar músculos e acelerar a recuperação. Ideal para pré e pós-treino.</div>
-        <div class="service-benefits">Performance · Recuperação · Prevenção</div>
+        <div class="service-desc">Técnica terapêutica com movimentos firmes, liberação miofascial e alongamentos. Ideal para pré e pós-treino. Melhora o desempenho, acelera a recuperação e ajuda a prevenir lesões.</div>
+        <div class="service-benefits">Performance · Recuperação · Lesões · Fadiga</div>
       </div>
     </div>
+
+    <!-- MASSAGEM GESTANTES -->
     <div class="service-card reveal"
          data-name="Massagem Gestantes"
-         data-desc="Técnica exclusiva para futuras mamães que promove relaxamento e alivia as dores decorrentes da gestação com cuidado e afeto. Inclui manobras de drenagem para detox, realizada com total segurança e acolhimento."
-         data-benefits="Relaxamento · Alívio de Dores · Detox"
+         data-desc="Técnica direcionada às futuras mamães. Promove relaxamento profundo, alivia as dores decorrentes da gestação com cuidado e afeto. Também utiliza manobras de drenagem para detox, realizada com total segurança e acolhimento."
+         data-benefits="Relaxamento · Alívio de Dores · Detox · Segurança"
          data-img="https://trywebdesign.com.br/valeria/massagem-gestantes.jpg">
       <img class="service-img" src="https://trywebdesign.com.br/valeria/massagem-gestantes.jpg" alt="Massagem para Gestantes"/>
       <div class="service-overlay">
         <div class="service-gold-line"></div>
         <div class="service-name">Massagem Gestantes</div>
-        <div class="service-desc">Técnica exclusiva para futuras mamães que promove relaxamento e alivia as dores decorrentes da gestação com cuidado e afeto.</div>
+        <div class="service-desc">Técnica exclusiva para futuras mamães. Promove relaxamento, alivia dores da gestação e inclui manobras de drenagem para detox. Realizada com total segurança e acolhimento.</div>
         <div class="service-benefits">Relaxamento · Alívio de Dores · Detox</div>
       </div>
     </div>
+
+    <!-- PEDRAS QUENTES -->
     <div class="service-card reveal"
          data-name="Pedras Quentes"
-         data-desc="Pedras vulcânicas de basalto aquecidas a até 150°C que penetram profundamente nos tecidos. O calor libera tensão muscular, desintoxica o corpo e promove relaxamento total. Ideal para combater stress e melhorar a qualidade do sono."
-         data-benefits="Relaxamento · Circulação · Anti-Stress"
+         data-desc="Técnica de relaxamento profundo que utiliza pedras vulcânicas de basalto lisas, aquecidas a 100°C–150°C. Durante a massagem, o calor penetra profundamente, aliviando a tensão e a rigidez muscular. Libera tensão muscular, melhora a circulação, promove relaxamento completo, reduz stress, ansiedade e distúrbios do sono, e desintoxica o corpo."
+         data-benefits="Relaxamento · Circulação · Anti-Stress · Sono · Detox"
          data-img="https://trywebdesign.com.br/valeria/pedras-quentes.jpg">
       <img class="service-img" src="https://trywebdesign.com.br/valeria/pedras-quentes.jpg" alt="Pedras Quentes"/>
       <div class="service-overlay">
         <div class="service-gold-line"></div>
         <div class="service-name">Pedras Quentes</div>
-        <div class="service-desc">Pedras vulcânicas de basalto aquecidas que penetram profundamente aliviando tensão, rigidez muscular e promovendo relaxamento total.</div>
-        <div class="service-benefits">Relaxamento · Circulação · Anti-Stress</div>
+        <div class="service-desc">Pedras vulcânicas de basalto aquecidas a 100°C–150°C penetram profundamente nos tecidos. O calor alivia tensão e rigidez muscular, reduz stress, ansiedade e distúrbios do sono.</div>
+        <div class="service-benefits">Relaxamento · Anti-Stress · Sono · Detox</div>
       </div>
     </div>
+
+    <!-- MADEROTERAPIA -->
     <div class="service-card reveal"
          data-name="Maderoterapia"
-         data-desc="Técnica colombiana que utiliza instrumentos de madeira para remodelar o corpo de forma 100% natural. Através de manobras intensas com rolos e ventosas, estimula o sistema linfático, auxilia na redução de medidas e melhora significativamente a firmeza da pele e celulite."
-         data-benefits="Remodelagem · Detox · Firmeza"
+         data-desc="Técnica de massagem emagrecedora e firmadora, originária da Colômbia, que utiliza instrumentos de madeira de diversos formatos para remodelar o corpo. 100% natural, estimula o sistema linfático. Massagem manual com rolos, ventosas e placas de madeira. Em média de 6 a 10 sessões para resultados mais duradouros."
+         data-benefits="Sistema Linfático · Drenagem · Circulação · Celulite · Firmeza · Redução de Medidas"
          data-img="maderoterapia.jpg">
       <img class="service-img" src="maderoterapia.jpg" alt="Maderoterapia"/>
       <div class="service-overlay">
         <div class="service-gold-line"></div>
         <div class="service-name">Maderoterapia</div>
-        <div class="service-desc">Técnica natural que utiliza instrumentos de madeira para esculpir o corpo, reduzir medidas e melhorar a textura da pele e celulite.</div>
-        <div class="service-benefits">Remodelagem · Detox · Firmeza</div>
+        <div class="service-desc">Técnica emagrecedora e firmadora originária da Colômbia. Utiliza rolos, ventosas e placas de madeira para remodelar o corpo, reduzir celulite e aumentar a firmeza da pele. 100% natural.</div>
+        <div class="service-benefits">Firmeza · Celulite · Redução de Medidas · Linfático</div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -1059,9 +1065,9 @@ padding: 110px 7vw;
     <div class="tecnica-item reveal">
       <div class="tecnica-num">01</div>
       <div class="tecnica-name">Massagem Sueca</div>
-      <p class="tecnica-text">Técnica corporal de relaxamento profundo com movimentos fluídos e firmes. Utilizada para redução de tensão muscular, melhora da circulação sanguínea e linfática e preparação para atividades físicas.</p>
+      <p class="tecnica-text">Técnica de massagem corporal que visa relaxar os músculos em profundidade, executada por movimentos fluídos e firmes. Utilizada para redução de tensão muscular e stress, melhora da circulação sanguínea e linfática, flexibilidade e mobilidade articular e preparação ou recuperação de atividades físicas intensas.</p>
       <div class="tecnica-benefits">
-        <span class="benefit-pill">Tensão</span>
+        <span class="benefit-pill">Tensão & Stress</span>
         <span class="benefit-pill">Circulação</span>
         <span class="benefit-pill">Flexibilidade</span>
         <span class="benefit-pill">Pré & Pós-treino</span>
@@ -1070,7 +1076,7 @@ padding: 110px 7vw;
     <div class="tecnica-item reveal">
       <div class="tecnica-num">02</div>
       <div class="tecnica-name">Californiana</div>
-      <p class="tecnica-text">Conhecida como o "toque da alma", esta massagem relaxante percorre todo o corpo com movimentos suaves e harmoniosos, acalmando profundamente o sistema nervoso.</p>
+      <p class="tecnica-text">Técnica relaxante que se distingue por seus movimentos suaves e harmoniosos que percorrem todo o corpo. Também chamada de "toque da alma", justamente pela capacidade de acalmar e acalentar o corpo e a alma, agindo profundamente no sistema nervoso.</p>
       <div class="tecnica-benefits">
         <span class="benefit-pill">Relaxamento</span>
         <span class="benefit-pill">Equilíbrio</span>
@@ -1080,7 +1086,7 @@ padding: 110px 7vw;
     <div class="tecnica-item reveal">
       <div class="tecnica-num">03</div>
       <div class="tecnica-name">Drenagem Linfática</div>
-      <p class="tecnica-text">Estimula a circulação dos linfonodos, eliminando toxinas e reforçando o sistema imunitário. Indicada para fins medicinais como linfodema e estéticos como redução de medidas e celulite.</p>
+      <p class="tecnica-text">Técnica que estimula a circulação da linfa, um fluído essencial ao sistema imunitário. Através do sistema linfático, elimina toxinas e reforça o sistema imunitário. Indicada para fins medicinais como linfodema e estéticos como redução de medidas, celulite, pernas pesadas e retenção de líquidos.</p>
       <div class="tecnica-benefits">
         <span class="benefit-pill">Detox</span>
         <span class="benefit-pill">Celulite</span>
@@ -1091,17 +1097,18 @@ padding: 110px 7vw;
     <div class="tecnica-item reveal">
       <div class="tecnica-num">04</div>
       <div class="tecnica-name">Pedras Quentes</div>
-      <p class="tecnica-text">Pedras vulcânicas de basalto aquecidas a até 150°C que penetram profundamente nos tecidos. O calor libera tensão muscular, desintoxica o corpo e promove relaxamento total.</p>
+      <p class="tecnica-text">Técnica de relaxamento profundo com pedras vulcânicas de basalto lisas, aquecidas a 100°C–150°C. O calor penetra profundamente, aliviando tensão e rigidez muscular. Libera tensão, melhora circulação, reduz stress, ansiedade e distúrbios do sono, e desintoxica o corpo.</p>
       <div class="tecnica-benefits">
         <span class="benefit-pill">Anti-Stress</span>
         <span class="benefit-pill">Sono</span>
         <span class="benefit-pill">Desintoxicação</span>
+        <span class="benefit-pill">Circulação</span>
       </div>
     </div>
     <div class="tecnica-item reveal">
       <div class="tecnica-num">05</div>
       <div class="tecnica-name">Massagem Desportiva</div>
-      <p class="tecnica-text">Técnica terapêutica com movimentos firmes, liberação miofascial e alongamentos. Ideal para todas as modalidades esportivas, tanto em preparação quanto em recuperação.</p>
+      <p class="tecnica-text">Técnica terapêutica direcionada com movimentos firmes para preparar os músculos, liberação miofascial e alongamentos. Ideal para pré e pós-treino em todas as atividades físicas e esportes. Melhora desempenho, reduz dor, fadiga e espasmos, e ajuda a prevenir lesões.</p>
       <div class="tecnica-benefits">
         <span class="benefit-pill">Performance</span>
         <span class="benefit-pill">Recuperação</span>
@@ -1112,7 +1119,7 @@ padding: 110px 7vw;
     <div class="tecnica-item reveal">
       <div class="tecnica-num">06</div>
       <div class="tecnica-name">Massagem Gestantes</div>
-      <p class="tecnica-text">Técnica segura e acolhedora direcionada às futuras mamães. Promove relaxamento, alivia dores decorrentes da gestação e inclui manobras de drenagem para detox.</p>
+      <p class="tecnica-text">Técnica direcionada às futuras mamães. Promove relaxamento profundo, alivia dores decorrentes da gestação com cuidado e afeto. Também utiliza manobras de drenagem para detox, realizada com total segurança e acolhimento.</p>
       <div class="tecnica-benefits">
         <span class="benefit-pill">Dores</span>
         <span class="benefit-pill">Relaxamento</span>
@@ -1123,7 +1130,7 @@ padding: 110px 7vw;
     <div class="tecnica-item reveal">
       <div class="tecnica-num">07</div>
       <div class="tecnica-name">Maderoterapia</div>
-      <p class="tecnica-text">Técnica colombiana que utiliza instrumentos de madeira para remodelar o corpo de forma 100% natural. Através de manobras intensas com rolos e ventosas, estimula o sistema linfático, auxilia na redução de medidas e melhora significativamente a firmeza da pele.</p>
+      <p class="tecnica-text">Técnica de massagem emagrecedora e firmadora, originária da Colômbia, que utiliza instrumentos de madeira de diversos formatos para remodelar o corpo de forma 100% natural. Massagem manual com rolos, ventosas e placas de madeira que estimula o sistema linfático. Em média 6 a 10 sessões para resultados duradouros.</p>
       <div class="tecnica-benefits">
         <span class="benefit-pill">Remodelagem</span>
         <span class="benefit-pill">Celulite</span>
