@@ -663,140 +663,6 @@ padding: 110px 7vw;
     0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,.4); }
     50%      { box-shadow: 0 4px 36px rgba(37,211,102,.7); }
   }
-
-  /* ══════════════════════════════
-     SERVICE POPUP BOX
-  ══════════════════════════════ */
-  .service-popup-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 500;
-    background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(4px);
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-  .service-popup-overlay.open {
-    display: flex;
-    animation: popupFadeIn .25s ease both;
-  }
-  @keyframes popupFadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-
-  .service-popup-box {
-    background: #fff;
-    max-width: 460px;
-    width: 100%;
-    position: relative;
-    animation: popupSlideUp .3s ease both;
-    box-shadow: 0 30px 80px rgba(0,0,0,.18);
-  }
-  @keyframes popupSlideUp {
-    from { opacity: 0; transform: translateY(28px); }
-    to   { opacity: 1; transform: none; }
-  }
-
-  .service-popup-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-    filter: brightness(.88) sepia(10%);
-  }
-  @media (max-width: 480px) {
-    .service-popup-img { height: 160px; }
-  }
-
-  .service-popup-body {
-    padding: 28px 28px 24px;
-  }
-  @media (max-width: 480px) {
-    .service-popup-body { padding: 20px 20px 18px; }
-  }
-
-  .service-popup-tag {
-    font-size: .58rem;
-    letter-spacing: .3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 8px;
-    display: block;
-  }
-
-  .service-popup-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.7rem;
-    font-weight: 400;
-    color: var(--dark);
-    margin-bottom: 14px;
-    line-height: 1.15;
-  }
-
-  .service-popup-desc {
-    font-size: .82rem;
-    font-weight: 300;
-    line-height: 1.9;
-    color: var(--gray);
-    margin-bottom: 18px;
-  }
-
-  .service-popup-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 22px;
-  }
-  .service-popup-pill {
-    font-size: .6rem;
-    letter-spacing: .1em;
-    padding: 4px 11px;
-    border: 1px solid var(--gold-pale);
-    color: var(--gold);
-    text-transform: uppercase;
-  }
-
-  .service-popup-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--dark);
-    color: #fff;
-    padding: 13px 26px;
-    text-decoration: none;
-    font-size: .68rem;
-    font-weight: 500;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    transition: background .3s, transform .2s;
-    width: 100%;
-    justify-content: center;
-  }
-  .service-popup-cta:hover { background: var(--blue); transform: translateY(-1px); }
-
-  .service-popup-close {
-    position: absolute;
-    top: 12px;
-    right: 14px;
-    background: rgba(0,0,0,.45);
-    border: none;
-    color: #fff;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    font-size: 1rem;
-    line-height: 1;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background .2s;
-    z-index: 2;
-  }
-  .service-popup-close:hover { background: rgba(0,0,0,.75); }
 </style>
 </head>
 <body>
@@ -1061,90 +927,60 @@ padding: 110px 7vw;
       <span class="section-tag">✦ Saiba Mais</span>
       <h2 class="section-title">Cada técnica,<br>uma <em>experiência</em></h2>
     </div>
-    <a href="https://wa.me/5511993426038" target="_blank" style="text-decoration:none;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold-pale);padding-bottom:3px;">Ver todos →</a>
   </div>
 
   <div class="tecnicas-list">
-    <div class="tecnica-item reveal">
+    <!-- MASSAGEM SUECA -->
+    <div class="tecnica-item reveal" id="tec-sueca">
       <div class="tecnica-num">01</div>
-      <div class="tecnica-name">Massagem Sueca</div>
-      <p class="tecnica-text">Técnica de massagem corporal que visa relaxar os músculos em profundidade, executada por movimentos fluídos e firmes. Utilizada para redução de tensão muscular e stress, melhora da circulação sanguínea e linfática, flexibilidade e mobilidade articular e preparação ou recuperação de atividades físicas intensas.</p>
-      <div class="tecnica-benefits">
-        <span class="benefit-pill">Tensão & Stress</span>
-        <span class="benefit-pill">Circulação</span>
-        <span class="benefit-pill">Flexibilidade</span>
-        <span class="benefit-pill">Pré & Pós-treino</span>
-      </div>
+      <div class="tecnica-name">Massagem Sueca (Deep Tissue)</div>
+      <p class="tecnica-text">É uma técnica de massagem corporal que visa relaxar os músculos em profundidade, executada por movimentos fluídos e firmes. Esta massagem é utilizada para: Redução de tensão muscular e stress; Melhorar circulação sanguínea e linfática; Melhorar flexibilidade e mobilidade articular; Preparar ou se recuperar de atividades físicas intensas (Pré e pós-treino). Em conclusão, a massagem suéca é uma técnica de massagem completa que oferece inúmeros benefícios para saúde física, mental e emocional.</p>
     </div>
-    <div class="tecnica-item reveal">
+
+    <!-- CALIFORNIANA -->
+    <div class="tecnica-item reveal" id="tec-californiana">
       <div class="tecnica-num">02</div>
-      <div class="tecnica-name">Californiana</div>
-      <p class="tecnica-text">Técnica relaxante que se distingue por seus movimentos suaves e harmoniosos que percorrem todo o corpo. Também chamada de "toque da alma", justamente pela capacidade de acalmar e acalentar o corpo e a alma, agindo profundamente no sistema nervoso.</p>
-      <div class="tecnica-benefits">
-        <span class="benefit-pill">Relaxamento</span>
-        <span class="benefit-pill">Equilíbrio</span>
-        <span class="benefit-pill">Bem-Estar</span>
-      </div>
+      <div class="tecnica-name">Massagem Californiana</div>
+      <p class="tecnica-text">A massagem californiana é uma técnica de massagem relaxante, ela se distingue por seus movimentos suaves e harmoniosos que percorre todo o corpo. Esta massagem também é chamada de "toque da alma". Chamada assim justamente pela capacidade de acalmar, acalentar o corpo e a alma.</p>
     </div>
-    <div class="tecnica-item reveal">
+
+    <!-- DRENAGEM -->
+    <div class="tecnica-item reveal" id="tec-drenagem">
       <div class="tecnica-num">03</div>
       <div class="tecnica-name">Drenagem Linfática</div>
-      <p class="tecnica-text">Técnica que estimula a circulação da linfa, um fluído essencial ao sistema imunitário. Através do sistema linfático, elimina toxinas e reforça o sistema imunitário. Indicada para fins medicinais como linfodema e estéticos como redução de medidas, celulite, pernas pesadas e retenção de líquidos.</p>
-      <div class="tecnica-benefits">
-        <span class="benefit-pill">Detox</span>
-        <span class="benefit-pill">Celulite</span>
-        <span class="benefit-pill">Imunidade</span>
-        <span class="benefit-pill">Retenção</span>
-      </div>
+      <p class="tecnica-text">A drenagem linfática é uma técnica de massagem que visa estimular a circulação das linfos, um fluído essencial ao sistema imunitário. Através do sistema linfático, uma rede de vasos e gânglios que filtra a linfo, um líquido que transporta as células imunitárias e seus resíduos celulares, na massagem de drenagem linfática estimula-se a circulação da linfo, permitindo assim a eliminação de toxinas e reforça o sistema imunitário. A drenagem linfática pode ser usada para fins medicinais como tratamento do linfodema por exemplo, para fins estéticos como redutora de medidas, celulites, pernas pesadas e retenção de líquidos.</p>
     </div>
-    <div class="tecnica-item reveal">
+
+    <!-- DESPORTIVA -->
+    <div class="tecnica-item reveal" id="tec-desportiva">
       <div class="tecnica-num">04</div>
-      <div class="tecnica-name">Pedras Quentes</div>
-      <p class="tecnica-text">Técnica de relaxamento profundo com pedras vulcânicas de basalto lisas, aquecidas a 100°C–150°C. O calor penetra profundamente, aliviando tensão e rigidez muscular. Libera tensão, melhora circulação, reduz stress, ansiedade e distúrbios do sono, e desintoxica o corpo.</p>
-      <div class="tecnica-benefits">
-        <span class="benefit-pill">Anti-Stress</span>
-        <span class="benefit-pill">Sono</span>
-        <span class="benefit-pill">Desintoxicação</span>
-        <span class="benefit-pill">Circulação</span>
-      </div>
-    </div>
-    <div class="tecnica-item reveal">
-      <div class="tecnica-num">05</div>
       <div class="tecnica-name">Massagem Desportiva</div>
-      <p class="tecnica-text">Técnica terapêutica direcionada com movimentos firmes para preparar os músculos, liberação miofascial e alongamentos. Ideal para pré e pós-treino em todas as atividades físicas e esportes. Melhora desempenho, reduz dor, fadiga e espasmos, e ajuda a prevenir lesões.</p>
-      <div class="tecnica-benefits">
-        <span class="benefit-pill">Performance</span>
-        <span class="benefit-pill">Recuperação</span>
-        <span class="benefit-pill">Lesões</span>
-        <span class="benefit-pill">Fadiga</span>
-      </div>
+      <p class="tecnica-text">É uma técnica terapêutica direcionada, que utiliza movimentos firmes para preparar os músculos, liberação miofascial e alongamentos. Utilizada em pré e pós treino, todas as atividades físicas e esportes. Benefícios: Melhora o desempenho, ou acelera a recuperação; Reduz dor, fadiga e espasmos; Ajuda a prevenir lesões; Aumenta disposição; Melhora o desempenho muscular e articular; Promove alívio geral e relaxamento.</p>
     </div>
-    <div class="tecnica-item reveal">
+
+    <!-- PEDRAS QUENTES -->
+    <div class="tecnica-item reveal" id="tec-pedras">
+      <div class="tecnica-num">05</div>
+      <div class="tecnica-name">Pedras Quentes</div>
+      <p class="tecnica-text">É uma técnica de massagem para relaxamento profundo, que utiliza pedras vulcânicas de basalto, lisas, aquecidas a 100°C - 150°C. Durante a massagem, o calor penetra profundamente, aliviando a tensão e a rigidez muscular. Benefícios: Libera tensão muscular; Melhora circulação; Promove relaxamento completo; Reduz estresse, ansiedade e distúrbios do sono; Desintoxica o corpo.</p>
+    </div>
+
+    <!-- GESTANTES -->
+    <div class="tecnica-item reveal" id="tec-gestantes">
       <div class="tecnica-num">06</div>
       <div class="tecnica-name">Massagem Gestantes</div>
-      <p class="tecnica-text">Técnica direcionada às futuras mamães. Promove relaxamento profundo, alivia dores decorrentes da gestação com cuidado e afeto. Também utiliza manobras de drenagem para detox, realizada com total segurança e acolhimento.</p>
-      <div class="tecnica-benefits">
-        <span class="benefit-pill">Dores</span>
-        <span class="benefit-pill">Relaxamento</span>
-        <span class="benefit-pill">Detox</span>
-      </div>
+      <p class="tecnica-text">É uma técnica direcionada às futuras mamães. Benefícios: Promove relaxamento; Alivia dores decorrentes da gestação; Detox, pois também se utiliza manobras de drenagem.</p>
     </div>
 
-    <div class="tecnica-item reveal">
+    <!-- MADEROTERAPIA -->
+    <div class="tecnica-item reveal" id="tec-madero">
       <div class="tecnica-num">07</div>
       <div class="tecnica-name">Maderoterapia</div>
-      <p class="tecnica-text">Técnica de massagem emagrecedora e firmadora, originária da Colômbia, que utiliza instrumentos de madeira de diversos formatos para remodelar o corpo de forma 100% natural. Massagem manual com rolos, ventosas e placas de madeira que estimula o sistema linfático. Em média 6 a 10 sessões para resultados duradouros.</p>
-      <div class="tecnica-benefits">
-        <span class="benefit-pill">Remodelagem</span>
-        <span class="benefit-pill">Celulite</span>
-        <span class="benefit-pill">Firmeza</span>
-        <span class="benefit-pill">Redução de Medidas</span>
-      </div>
+      <p class="tecnica-text">É uma técnica de massagem emagrecedora e firmadora, originária da Colômbia, que utiliza instrumentos de madeira de diversos formatos para remodelar o corpo. 100% natural, estimula o sistema linfático. Massagem manual com rolos, ventosas e placas de madeira. Benefícios: Estimula o sistema linfático; Drenagem da retenção de líquidos; Ajuda na circulação sanguínea e oxigenação da pele; Reduz a celulite, suaviza a pele e tonifica os músculos; Aumenta a firmeza da pele. Em média de 6 a 10 sessões costuma ser recomendado para resultado mais duradouro.</p>
     </div>
-
   </div>
 </section>
-
+  
 <!-- CTA BAND -->
 <section class="cta-band" id="contato">
   <h2 class="cta-title">Pronta para uma<br><em>experiência única?</em></h2>
@@ -1175,26 +1011,6 @@ padding: 110px 7vw;
 <a class="wa-float" href="https://wa.me/5511993426038" target="_blank" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.112 1.524 5.84L.057 23.543a.5.5 0 0 0 .612.612l5.703-1.467A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.942 9.942 0 0 1-5.081-1.392l-.364-.216-3.384.87.888-3.384-.233-.373A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
 </a>
-
-<!-- ══════════════════════════════
-     SERVICE POPUP
-══════════════════════════════ -->
-<div class="service-popup-overlay" id="servicePopupOverlay" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
-  <div class="service-popup-box" id="servicePopupBox">
-    <button class="service-popup-close" id="servicePopupClose" aria-label="Fechar">✕</button>
-    <img class="service-popup-img" id="popupImg" src="" alt=""/>
-    <div class="service-popup-body">
-      <span class="service-popup-tag">✦ Nossos Serviços</span>
-      <div class="service-popup-title" id="popupTitle"></div>
-      <p class="service-popup-desc" id="popupDesc"></p>
-      <div class="service-popup-pills" id="popupPills"></div>
-      <a class="service-popup-cta" href="https://wa.me/5511993426038" target="_blank">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.112 1.524 5.84L.057 23.543a.5.5 0 0 0 .612.612l5.703-1.467A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.942 9.942 0 0 1-5.081-1.392l-.364-.216-3.384.87.888-3.384-.233-.373A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-        Agendar esta sessão
-      </a>
-    </div>
-  </div>
-</div>
 
 <script>
   // ── Intersection Observer for reveal animations ──
@@ -1275,6 +1091,68 @@ padding: 110px 7vw;
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closePopup();
   });
+  <script>
+  // Revelar elementos ao rolar a página
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => io.observe(el));
+
+  // Background da navegação ao rolar
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.background = window.scrollY > 60
+      ? 'rgba(252, 250, 245, 0.97)'
+      : 'rgba(252, 250, 245, 0.52)';
+  });
+
+  // Mapeamento dos cards para os IDs de descrição
+  const cardToSection = {
+    "Massagem Sueca": "tec-sueca",
+    "Massagem Californiana": "tec-californiana",
+    "Drenagem Linfática": "tec-drenagem",
+    "Massagem Desportiva": "tec-desportiva",
+    "Massagem Gestantes": "tec-gestantes",
+    "Pedras Quentes": "tec-pedras",
+    "Maderoterapia": "tec-madero"
+  };
+
+  // Lógica de clique nos cards para scroll suave
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const serviceName = card.dataset.name;
+      const targetId = cardToSection[serviceName];
+      if (targetId) {
+        const element = document.getElementById(targetId);
+        const offset = 100; // Espaço para não ficar colado no topo (nav fixa)
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+
+        // Efeito visual de destaque temporário
+        element.style.borderColor = 'var(--gold)';
+        setTimeout(() => { element.style.borderColor = 'transparent'; }, 2000);
+      }
+    });
+  });
+
+  // Delay no surgimento dos itens de técnica
+  document.querySelectorAll('.tecnica-item').forEach((el, i) => {
+    el.style.transitionDelay = (i * 0.08) + 's';
+  });
+</script>
 </script>
 </body>
 </html>
