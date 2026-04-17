@@ -663,6 +663,80 @@ padding: 110px 7vw;
     0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,.4); }
     50%      { box-shadow: 0 4px 36px rgba(37,211,102,.7); }
   }
+  /* Estilização aprimorada da lista de técnicas */
+  .tecnica-item {
+    grid-column: span 2; /* Ocupa a largura total para melhor leitura de textos longos */
+    background: #fff;
+    padding: 50px;
+    border-bottom: 1px solid var(--gold-pale);
+    border-left: 4px solid transparent;
+    transition: all 0.4s ease;
+  }
+  
+  @media (max-width: 768px) {
+    .tecnica-item { padding: 30px 20px; }
+  }
+
+  .tecnica-item:hover {
+    border-left-color: var(--gold);
+    background: var(--white);
+  }
+
+  .tecnica-intro {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--gray);
+    margin-bottom: 25px;
+    font-weight: 300;
+  }
+
+  .tecnica-sub-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+  }
+
+  .tecnica-list-ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas para os itens da lista */
+    gap: 12px 30px;
+    margin-bottom: 25px;
+  }
+
+  @media (max-width: 600px) {
+    .tecnica-list-ul { grid-template-columns: 1fr; }
+  }
+
+  .tecnica-list-ul li {
+    font-size: 0.85rem;
+    color: var(--gray);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+  }
+
+  .tecnica-list-ul li::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 0.7rem;
+    margin-top: 3px;
+  }
+
+  .tecnica-footer {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--blue);
+    border-top: 1px dashed var(--gold-pale);
+    padding-top: 15px;
+    margin-top: 20px;
+    line-height: 1.6;
+  }
 </style>
 </head>
 <body>
@@ -918,69 +992,125 @@ padding: 110px 7vw;
     </div>
 
   </div>
-</section>
-
-<!-- TECNICAS DETAIL -->
-<section id="tecnicas">
+</section><section id="tecnicas">
   <div class="tecnicas-header">
     <div>
-      <span class="section-tag">✦ Saiba Mais</span>
-      <h2 class="section-title">Cada técnica,<br>uma <em>experiência</em></h2>
+      <span class="section-tag">✦ Detalhes Terapêuticos</span>
+      <h2 class="section-title">A profundidade de<br>cada <em>tratamento</em></h2>
     </div>
   </div>
 
   <div class="tecnicas-list">
+
     <!-- MASSAGEM SUECA -->
     <div class="tecnica-item reveal" id="tec-sueca">
       <div class="tecnica-num">01</div>
       <div class="tecnica-name">Massagem Sueca (Deep Tissue)</div>
-      <p class="tecnica-text">É uma técnica de massagem corporal que visa relaxar os músculos em profundidade, executada por movimentos fluídos e firmes. Esta massagem é utilizada para: Redução de tensão muscular e stress; Melhorar circulação sanguínea e linfática; Melhorar flexibilidade e mobilidade articular; Preparar ou se recuperar de atividades físicas intensas (Pré e pós-treino). Em conclusão, a massagem suéca é uma técnica de massagem completa que oferece inúmeros benefícios para saúde física, mental e emocional.</p>
+      <p class="tecnica-intro">É uma técnica de massagem corporal que visa relaxar os músculos em profundidade, executada por movimentos fluídos e firmes.</p>
+      
+      <span class="tecnica-sub-title">Esta massagem é utilizada para:</span>
+      <ul class="tecnica-list-ul">
+        <li>Redução de tensão muscular e stress</li>
+        <li>Melhorar circulação sanguínea e linfática</li>
+        <li>Melhorar flexibilidade e mobilidade articular</li>
+        <li>Preparar ou se recuperar de atividades físicas intensas (Pré e pós-treino)</li>
+      </ul>
+      <div class="tecnica-footer">
+        Em conclusão, a massagem suéca é uma técnica de massagem completa que oferece inúmeros benefícios para saúde física, mental e emocional.
+      </div>
     </div>
 
     <!-- CALIFORNIANA -->
     <div class="tecnica-item reveal" id="tec-californiana">
       <div class="tecnica-num">02</div>
       <div class="tecnica-name">Massagem Californiana</div>
-      <p class="tecnica-text">A massagem californiana é uma técnica de massagem relaxante, ela se distingue por seus movimentos suaves e harmoniosos que percorre todo o corpo. Esta massagem também é chamada de "toque da alma". Chamada assim justamente pela capacidade de acalmar, acalentar o corpo e a alma.</p>
+      <p class="tecnica-intro">A massagem californiana é uma técnica de massagem relaxante, ela se distingue por seus movimentos suaves e harmoniosos que percorre todo o corpo.</p>
+      <div class="tecnica-footer" style="border:none; padding:0;">
+        Esta massagem também é chamada de <strong>"toque da alma"</strong>, chamada assim justamente pela capacidade de acalmar, acalentar o corpo e a alma.
+      </div>
     </div>
 
-    <!-- DRENAGEM -->
+    <!-- DRENAGEM LINFÁTICA -->
     <div class="tecnica-item reveal" id="tec-drenagem">
       <div class="tecnica-num">03</div>
       <div class="tecnica-name">Drenagem Linfática</div>
-      <p class="tecnica-text">A drenagem linfática é uma técnica de massagem que visa estimular a circulação das linfos, um fluído essencial ao sistema imunitário. Através do sistema linfático, uma rede de vasos e gânglios que filtra a linfo, um líquido que transporta as células imunitárias e seus resíduos celulares, na massagem de drenagem linfática estimula-se a circulação da linfo, permitindo assim a eliminação de toxinas e reforça o sistema imunitário. A drenagem linfática pode ser usada para fins medicinais como tratamento do linfodema por exemplo, para fins estéticos como redutora de medidas, celulites, pernas pesadas e retenção de líquidos.</p>
+      <p class="tecnica-intro">A drenagem linfática é uma técnica de massagem que visa estimular a circulação das linfos, um fluído essencial ao sistema imunitário. Através do sistema linfático, uma rede de vasos e gânglios que filtra a linfo — um líquido que transporta as células imunitárias e seus resíduos celulares — estimula-se a circulação, permitindo a eliminação de toxinas e o reforço do sistema imunitário.</p>
+      
+      <span class="tecnica-sub-title">Indicações:</span>
+      <ul class="tecnica-list-ul">
+        <li>Fins medicinais (ex: tratamento do linfodema)</li>
+        <li>Redutora de medidas e celulites</li>
+        <li>Alívio de pernas pesadas</li>
+        <li>Retenção de líquidos</li>
+      </ul>
     </div>
 
-    <!-- DESPORTIVA -->
+    <!-- MASSAGEM DESPORTIVA -->
     <div class="tecnica-item reveal" id="tec-desportiva">
       <div class="tecnica-num">04</div>
       <div class="tecnica-name">Massagem Desportiva</div>
-      <p class="tecnica-text">É uma técnica terapêutica direcionada, que utiliza movimentos firmes para preparar os músculos, liberação miofascial e alongamentos. Utilizada em pré e pós treino, todas as atividades físicas e esportes. Benefícios: Melhora o desempenho, ou acelera a recuperação; Reduz dor, fadiga e espasmos; Ajuda a prevenir lesões; Aumenta disposição; Melhora o desempenho muscular e articular; Promove alívio geral e relaxamento.</p>
+      <p class="tecnica-intro">É uma técnica terapêutica direcionada, que utiliza movimentos firmes para preparar os músculos, liberação miofascial e alongamentos. Utilizada em pré e pós treino, abrangendo todas as atividades físicas e esportes.</p>
+      
+      <span class="tecnica-sub-title">Benefícios:</span>
+      <ul class="tecnica-list-ul">
+        <li>Melhora o desempenho ou acelera a recuperação</li>
+        <li>Reduz dor, fadiga e espasmos</li>
+        <li>Ajuda a prevenir lesões e aumenta a disposição</li>
+        <li>Melhora o desempenho muscular e articular</li>
+        <li>Promove alívio geral e relaxamento</li>
+      </ul>
     </div>
 
     <!-- PEDRAS QUENTES -->
     <div class="tecnica-item reveal" id="tec-pedras">
       <div class="tecnica-num">05</div>
       <div class="tecnica-name">Pedras Quentes</div>
-      <p class="tecnica-text">É uma técnica de massagem para relaxamento profundo, que utiliza pedras vulcânicas de basalto, lisas, aquecidas a 100°C - 150°C. Durante a massagem, o calor penetra profundamente, aliviando a tensão e a rigidez muscular. Benefícios: Libera tensão muscular; Melhora circulação; Promove relaxamento completo; Reduz estresse, ansiedade e distúrbios do sono; Desintoxica o corpo.</p>
+      <p class="tecnica-intro">Técnica de relaxamento profundo que utiliza pedras vulcânicas de basalto, lisas, aquecidas a 100°C - 150°C. Durante a massagem, o calor penetra profundamente, aliviando a tensão e a rigidez muscular.</p>
+      
+      <span class="tecnica-sub-title">Benefícios Principais:</span>
+      <ul class="tecnica-list-ul">
+        <li>Libera tensão muscular e melhora a circulação</li>
+        <li>Promove relaxamento completo</li>
+        <li>Reduz estresse e ansiedade</li>
+        <li>Combate distúrbios do sono</li>
+        <li>Desintoxica o corpo</li>
+      </ul>
     </div>
 
-    <!-- GESTANTES -->
+    <!-- MASSAGEM GESTANTES -->
     <div class="tecnica-item reveal" id="tec-gestantes">
       <div class="tecnica-num">06</div>
       <div class="tecnica-name">Massagem Gestantes</div>
-      <p class="tecnica-text">É uma técnica direcionada às futuras mamães. Benefícios: Promove relaxamento; Alivia dores decorrentes da gestação; Detox, pois também se utiliza manobras de drenagem.</p>
+      <p class="tecnica-intro">É uma técnica carinhosamente direcionada às futuras mamães, focando no acolhimento e nas mudanças do corpo durante este período.</p>
+      
+      <span class="tecnica-sub-title">Benefícios:</span>
+      <ul class="tecnica-list-ul">
+        <li>Promove relaxamento profundo</li>
+        <li>Alivia dores decorrentes da gestação</li>
+        <li>Efeito Detox (utiliza manobras de drenagem)</li>
+      </ul>
     </div>
 
     <!-- MADEROTERAPIA -->
     <div class="tecnica-item reveal" id="tec-madero">
       <div class="tecnica-num">07</div>
       <div class="tecnica-name">Maderoterapia</div>
-      <p class="tecnica-text">É uma técnica de massagem emagrecedora e firmadora, originária da Colômbia, que utiliza instrumentos de madeira de diversos formatos para remodelar o corpo. 100% natural, estimula o sistema linfático. Massagem manual com rolos, ventosas e placas de madeira. Benefícios: Estimula o sistema linfático; Drenagem da retenção de líquidos; Ajuda na circulação sanguínea e oxigenação da pele; Reduz a celulite, suaviza a pele e tonifica os músculos; Aumenta a firmeza da pele. Em média de 6 a 10 sessões costuma ser recomendado para resultado mais duradouro.</p>
+      <p class="tecnica-intro">Técnica de massagem emagrecedora e firmadora, originária da Colômbia, que utiliza instrumentos de madeira de diversos formatos para remodelar o corpo. É 100% natural e estimula diretamente o sistema linfático através de rolos, ventosas e placas.</p>
+      
+      <span class="tecnica-sub-title">Benefícios:</span>
+      <ul class="tecnica-list-ul">
+        <li>Drenagem da retenção de líquidos</li>
+        <li>Ajuda na circulação e oxigenação da pele</li>
+        <li>Reduz celulite, suaviza a pele e tonifica músculos</li>
+        <li>Aumenta a firmeza da pele</li>
+      </ul>
+      <div class="tecnica-footer">
+        Recomendação: Para resultados mais duradouros, costuma-se recomendar uma média de 6 a 10 sessões.
+      </div>
     </div>
+
   </div>
 </section>
-  
 <!-- CTA BAND -->
 <section class="cta-band" id="contato">
   <h2 class="cta-title">Pronta para uma<br><em>experiência única?</em></h2>
