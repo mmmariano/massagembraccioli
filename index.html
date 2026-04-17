@@ -1012,8 +1012,8 @@ padding: 110px 7vw;
   <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.112 1.524 5.84L.057 23.543a.5.5 0 0 0 .612.612l5.703-1.467A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.942 9.942 0 0 1-5.081-1.392l-.364-.216-3.384.87.888-3.384-.233-.373A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
 </a>
 
-<script>
-  // ── Intersection Observer for reveal animations ──
+  <script>
+  // 1. Configuração do Observador de Interseção (Animações de Surgir)
   const reveals = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -1023,88 +1023,10 @@ padding: 110px 7vw;
       }
     });
   }, { threshold: 0.12 });
-  reveals.forEach(el => io.observe(el));
-
-  // ── Nav background on scroll ──
-  window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    nav.style.background = window.scrollY > 60
-      ? 'rgba(252, 250, 245, 0.97)'
-      : 'rgba(252, 250, 245, 0.82)';
-  });
-
-  // ── Stagger tecnica-items ──
-  document.querySelectorAll('.tecnica-item').forEach((el, i) => {
-    el.style.transitionDelay = (i * 0.08) + 's';
-  });
-
-  // ── Service Card Popup ──
-  const overlay  = document.getElementById('servicePopupOverlay');
-  const closeBtn = document.getElementById('servicePopupClose');
-  const popupImg   = document.getElementById('popupImg');
-  const popupTitle = document.getElementById('popupTitle');
-  const popupDesc  = document.getElementById('popupDesc');
-  const popupPills = document.getElementById('popupPills');
-
-  function openPopup(card) {
-    const name     = card.dataset.name     || '';
-    const desc     = card.dataset.desc     || '';
-    const benefits = card.dataset.benefits || '';
-    const img      = card.dataset.img      || '';
-
-    popupImg.src = img;
-    popupImg.alt = name;
-    popupTitle.textContent = name;
-    popupDesc.textContent  = desc;
-
-    popupPills.innerHTML = '';
-    benefits.split('·').forEach(b => {
-      const pill = document.createElement('span');
-      pill.className = 'service-popup-pill';
-      pill.textContent = b.trim();
-      popupPills.appendChild(pill);
-    });
-
-    overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closePopup() {
-    overlay.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  // Click on card opens popup
-  document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('click', () => openPopup(card));
-  });
-
-  // Close on button
-  closeBtn.addEventListener('click', closePopup);
-
-  // Close on overlay click (outside box)
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) closePopup();
-  });
-
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closePopup();
-  });
   
-  // Revelar elementos ao rolar a página
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
   reveals.forEach(el => io.observe(el));
 
-  // Background da navegação ao rolar
+  // 2. Mudança de cor da Navegação ao rolar
   window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
     nav.style.background = window.scrollY > 60
@@ -1112,7 +1034,7 @@ padding: 110px 7vw;
       : 'rgba(252, 250, 245, 0.52)';
   });
 
-  // Mapeamento dos cards para os IDs de descrição
+  // 3. Mapeamento dos cards para os IDs de descrição (Scroll Suave)
   const cardToSection = {
     "Massagem Sueca": "tec-sueca",
     "Massagem Californiana": "tec-californiana",
@@ -1123,14 +1045,14 @@ padding: 110px 7vw;
     "Maderoterapia": "tec-madero"
   };
 
-  // Lógica de clique nos cards para scroll suave
   document.querySelectorAll('.service-card').forEach(card => {
     card.addEventListener('click', () => {
       const serviceName = card.dataset.name;
       const targetId = cardToSection[serviceName];
+      
       if (targetId) {
         const element = document.getElementById(targetId);
-        const offset = 100; // Espaço para não ficar colado no topo (nav fixa)
+        const offset = 100; // Espaço para não cobrir o texto com o menu fixo
         const bodyRect = document.body.getBoundingClientRect().top;
         const elementRect = element.getBoundingClientRect().top;
         const elementPosition = elementRect - bodyRect;
@@ -1141,18 +1063,20 @@ padding: 110px 7vw;
           behavior: 'smooth'
         });
 
-        // Efeito visual de destaque temporário
+        // Efeito visual de destaque rápido na borda ao chegar
+        element.style.transition = "border-color 0.5s";
         element.style.borderColor = 'var(--gold)';
         setTimeout(() => { element.style.borderColor = 'transparent'; }, 2000);
       }
     });
   });
 
-  // Delay no surgimento dos itens de técnica
+  // 4. Delay sequencial para os itens da lista de técnicas
   document.querySelectorAll('.tecnica-item').forEach((el, i) => {
     el.style.transitionDelay = (i * 0.08) + 's';
   });
-
 </script>
+
+  
 </body>
 </html>
